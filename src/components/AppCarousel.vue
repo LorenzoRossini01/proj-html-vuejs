@@ -14,10 +14,6 @@ export default {
     carousel: Array,
   },
   methods: {
-    getImgUrl(img) {
-      return new URL(`../assets/img/${img}`, import.meta.url).href;
-    },
-
     goNextSlide() {
       if (this.activeIndex >= this.carousel.length - 1) {
         this.activeIndex = 0;
@@ -49,20 +45,20 @@ export default {
     <div class="wrapper">
       <!-- header  -->
       <img
-        :src="getImgUrl(carousel[activeIndex].img1)"
+        :src="store.getImgUrl(carousel[activeIndex].img1)"
         alt=""
         v-if="carousel[activeIndex].img1"
       />
       <img
         class="pizza-slice"
-        :src="getImgUrl(carousel[activeIndex].img2)"
+        :src="store.getImgUrl(carousel[activeIndex].img2)"
         v-if="carousel[activeIndex].img1"
         alt=""
       />
 
       <!-- main  -->
       <img
-        :src="getImgUrl(carousel[activeIndex].background)"
+        :src="store.getImgUrl(carousel[activeIndex].background)"
         alt=""
         v-if="carousel[activeIndex].background"
       />
