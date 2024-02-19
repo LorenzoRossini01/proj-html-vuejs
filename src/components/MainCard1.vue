@@ -3,17 +3,24 @@ import { store } from "../store/index";
 
 export default {
   data() {
-    return { store };
+    return {
+      store,
+      cardImg: ["h3-img-1.jpg", "h3-img-2.jpg", "h3-img-3.jpg", "h3-img-4.jpg"],
+    };
   },
 };
 </script>
 
 <template>
-  <div class="card my-2">card</div>
+  <div class="col-3" v-for="card in cardImg">
+    <div class="card my-2">
+      <img :src="store.getImgUrl(card)" alt="" />
+    </div>
+  </div>
 </template>
 
 <style lang="scss" scoped>
 div {
-  height: 250px;
+  border-radius: 0;
 }
 </style>

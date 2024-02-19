@@ -46,19 +46,8 @@ export default {
 <template>
   <!-- cards -->
   <section>
-    <div class="row">
-      <div class="col-3">
-        <MainCard1></MainCard1>
-      </div>
-      <div class="col-3">
-        <MainCard1></MainCard1>
-      </div>
-      <div class="col-3">
-        <MainCard1></MainCard1>
-      </div>
-      <div class="col-3">
-        <MainCard1></MainCard1>
-      </div>
+    <div class="row g-2">
+      <MainCard1></MainCard1>
     </div>
   </section>
 
