@@ -22,9 +22,4 @@ export default {
   </header>
 </template>
 
-<style lang="scss" scoped>
-nav {
-  height: 100px;
-  background-color: aqua;
-}
-</style>
+<style lang="scss" scoped></style>
