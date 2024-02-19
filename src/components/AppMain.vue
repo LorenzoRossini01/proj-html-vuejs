@@ -15,16 +15,19 @@ export default {
           text: '"Forget the trendy pizza shops, this hidden spot makes the best new york-style pizza slice in naples"',
           by: "Washigton post 2018",
           background: "h3-testimonials-bckgrnd.jpg",
+          bg: "#F6F7F2",
         },
         {
           text: '"Lorem ipsum dolor sit amet consectetur adipisicing elit. laudantium a error pariatur. Pariatur ratione nobis obcaecati enim deleniti quis vel nostrum."',
           by: "Washigton post 2018",
           background: "h3-testimonials-bckgrnd.jpg",
+          bg: "#F6F7F2",
         },
         {
           text: '"Necessitatibus ullam, beatae temporibus, ipsam esse amet qui voluptatibus,  obcaecati enim deleniti quis vel nostrum."',
           by: "Washigton post 2018",
           background: "h3-testimonials-bckgrnd.jpg",
+          bg: "#F6F7F2",
         },
       ],
     };
