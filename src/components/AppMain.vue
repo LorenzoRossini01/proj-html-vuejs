@@ -30,6 +30,32 @@ export default {
           bg: "#F6F7F2",
         },
       ],
+
+      specialsCols: {
+        colOne: { img1: "h1-img-4.jpg", img2: "h1-img-7n.png" },
+        colTwo: {
+          title: "specials*",
+          description:
+            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum, sed Ullam sequi nesciunt tempore impedit eveniet",
+          combos: [
+            {
+              price: "10",
+              name: "combo piccolo",
+              desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+            },
+            {
+              price: "20",
+              name: "combo medio",
+              desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+            },
+            {
+              price: "30",
+              name: "combo grande",
+              desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+            },
+          ],
+        },
+      },
     };
   },
 
@@ -59,7 +85,7 @@ export default {
   <!-- menus -->
   <section>
     <div class="row">
-      <double-col></double-col>
+      <double-col :cols="specialsCols"></double-col>
     </div>
   </section>
 
@@ -70,20 +96,7 @@ export default {
 
   <!-- people  -->
   <section>
-    <div class="row g-0">
-      <div class="col-3">
-        <MainPeople></MainPeople>
-      </div>
-      <div class="col-3">
-        <MainPeople></MainPeople>
-      </div>
-      <div class="col-3">
-        <MainPeople></MainPeople>
-      </div>
-      <div class="col-3">
-        <MainPeople></MainPeople>
-      </div>
-    </div>
+    <MainPeople></MainPeople>
   </section>
 
   <!-- sponsor -->
