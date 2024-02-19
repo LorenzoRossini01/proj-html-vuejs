@@ -6,22 +6,20 @@ export default {
     return {
       store,
 
-      HeaderCarousel: [
-        { img1: "h3-rev-img-1.png", img2: "h3-rev-img-2.png" },
-        { img1: "h3-rev-img-3.png", img2: "h3-rev-img-4.png" },
-        { img1: "h3-rev-img-5.png", img2: "h3-rev-img-6.png" },
-      ],
       activeIndex: 0,
     };
   },
 
+  props: {
+    carousel: Array,
+  },
   methods: {
     getImgUrl(img) {
       return new URL(`../assets/img/${img}`, import.meta.url).href;
     },
 
     goNextSlide() {
-      if (this.activeIndex >= this.HeaderCarousel.length - 1) {
+      if (this.activeIndex >= this.carousel.length - 1) {
         this.activeIndex = 0;
       } else {
         this.activeIndex++;
@@ -30,33 +28,59 @@ export default {
 
     goPrevSlide() {
       if (this.activeIndex == 0) {
-        this.activeIndex = this.HeaderCarousel.length - 1;
+        this.activeIndex = this.carousel.length - 1;
       } else {
         this.activeIndex--;
       }
     },
 
-    goToSlide() {},
+    goToSlide(dotIndex) {
+      this.activeIndex = dotIndex;
+    },
   },
 };
 </script>
 
 <template>
-  <div class="container-fluid p-0" style="background-color: #181818">
+  <div
+    class="container-fluid p-0"
+    :style="`background-color: ${carousel[activeIndex].bg}`"
+  >
     <div class="wrapper">
-      <img :src="getImgUrl(HeaderCarousel[activeIndex].img1)" alt="" />
+      <!-- header  -->
+      <img
+        :src="getImgUrl(carousel[activeIndex].img1)"
+        alt=""
+        v-if="carousel[activeIndex].img1"
+      />
       <img
         class="pizza-slice"
-        :src="getImgUrl(HeaderCarousel[activeIndex].img2)"
+        :src="getImgUrl(carousel[activeIndex].img2)"
+        v-if="carousel[activeIndex].img1"
         alt=""
       />
+
+      <!-- main  -->
+      <img
+        :src="getImgUrl(carousel[activeIndex].background)"
+        alt=""
+        v-if="carousel[activeIndex].background"
+      />
+
+      <div class="details">
+        <h3>{{ carousel[activeIndex].text }}</h3>
+        <p>{{ carousel[activeIndex].by }}</p>
+      </div>
+
       <div @click="goPrevSlide()" class="prev-button"><span>prev</span></div>
       <div @click="goNextSlide()" class="next-button"><span>next</span></div>
-      <div v-if="!HeaderCarousel" class="dots">
-        <div class="dot active"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
+      <div v-if="carousel[activeIndex].background" class="dots">
+        <div
+          class="dot"
+          :class="index == activeIndex ? 'active' : ''"
+          @click="goToSlide(index)"
+          v-for="(slide, index) in carousel"
+        ></div>
       </div>
     </div>
   </div>
@@ -66,7 +90,7 @@ export default {
 .container-fluid {
   .wrapper {
     height: 500px;
-    padding: 50px 0 100px;
+    padding: 100px 0 100px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -74,6 +98,24 @@ export default {
   }
   .pizza-slice {
     position: absolute;
+  }
+
+  .details {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    h3 {
+      width: 1030px;
+    }
+    p {
+      color: #d2401e;
+    }
   }
 
   .prev-button,
@@ -107,15 +149,15 @@ export default {
       padding-top: 2rem;
     }
   }
-
   .dots {
     position: absolute;
-    bottom: 30%;
+    margin-top: 200px;
     display: flex;
+    flex-direction: row;
     gap: 5px;
     .dot {
-      width: 20px;
-      height: 20px;
+      width: 15px;
+      height: 15px;
       border-radius: 50%;
       background-color: #e4e4d4;
       &.active {

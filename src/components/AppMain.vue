@@ -8,7 +8,26 @@ import MainPizzas from "../components/MainPizzas.vue";
 
 export default {
   data() {
-    return { store };
+    return {
+      store,
+      mainCarousel: [
+        {
+          text: '"Forget the trendy pizza shops, this hidden spot makes the best new york-style pizza slice in naples"',
+          by: "Washigton post 2018",
+          background: "h3-testimonials-bckgrnd.jpg",
+        },
+        {
+          text: '"Lorem ipsum dolor sit amet consectetur adipisicing elit. laudantium a error pariatur. Pariatur ratione nobis obcaecati enim deleniti quis vel nostrum."',
+          by: "Washigton post 2018",
+          background: "h3-testimonials-bckgrnd.jpg",
+        },
+        {
+          text: '"Necessitatibus ullam, beatae temporibus, ipsam esse amet qui voluptatibus,  obcaecati enim deleniti quis vel nostrum."',
+          by: "Washigton post 2018",
+          background: "h3-testimonials-bckgrnd.jpg",
+        },
+      ],
+    };
   },
 
   components: {
@@ -42,7 +61,7 @@ export default {
 
   <!-- carousel  -->
   <section>
-    <app-carousel></app-carousel>
+    <app-carousel :carousel="mainCarousel"></app-carousel>
   </section>
 
   <!-- menus -->
