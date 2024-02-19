@@ -1,22 +1,15 @@
 <script>
 import { store } from "../store/index";
-import DoubleCol from "../components/DoubleCol.vue";
 
 export default {
   data() {
     return { store };
   },
-
-  components: {
-    DoubleCol,
-  },
 };
 </script>
 
 <template>
-  <div class="row">
-    <double-col></double-col>
-  </div>
+  <nav>Nav</nav>
 </template>
 
 <style lang="scss" scoped></style>
