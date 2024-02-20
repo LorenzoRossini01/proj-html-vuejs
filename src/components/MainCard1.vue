@@ -29,6 +29,7 @@ export default {
 <style lang="scss" scoped>
 div {
   border-radius: 0;
+  border: none;
 }
 
 .layover {

@@ -75,6 +75,7 @@ export default {
       justify-content: center;
       align-items: center;
       opacity: 0%;
+
       overflow: hidden;
       div {
         background-color: #d2401e;
