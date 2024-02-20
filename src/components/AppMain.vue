@@ -127,7 +127,11 @@ export default {
 
   <!-- banner -->
   <section>
-    <div class="banner"></div>
+    <div class="banner">
+      <div class="text-wrap">
+        <h2>go ahead and build your own pizza we won't judge!</h2>
+      </div>
+    </div>
   </section>
 
   <!-- people  -->
@@ -164,6 +168,21 @@ export default {
 .banner {
   height: 500px;
   background-color: chartreuse;
+  background-image: url("../assets/img/h3-background-img.jpg");
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .text-wrap {
+    width: 70%;
+    h2 {
+      color: white;
+      text-transform: uppercase;
+      font-weight: 700;
+      width: 230px;
+    }
+  }
 }
 
 .sponsor {
