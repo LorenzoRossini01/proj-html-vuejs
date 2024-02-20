@@ -5,6 +5,7 @@ import AppCarousel from "../components/AppCarousel.vue";
 import DoubleCol from "../components/DoubleCol.vue";
 import MainPeople from "../components/MainPeople.vue";
 import MainPizzas from "../components/MainPizzas.vue";
+import MainBooking from "../components/MainBooking.vue";
 
 export default {
   data() {
@@ -101,6 +102,7 @@ export default {
     DoubleCol,
     MainPeople,
     MainPizzas,
+    MainBooking,
   },
 };
 </script>
@@ -154,11 +156,7 @@ export default {
 
   <!-- book table  -->
   <section>
-    <form>
-      <input type="number" name="" id="" />
-      <input type="date" name="" id="" />
-      <input type="time" name="" id="" />
-    </form>
+    <main-booking></main-booking>
   </section>
 </template>
 
