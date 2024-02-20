@@ -103,8 +103,8 @@ header {
 .row {
   overflow: auto;
   flex-wrap: nowrap;
-  gap: 15rem;
-  padding-bottom: 10rem;
+  gap: 5rem;
+  padding: 5rem;
   width: 100%;
 }
 </style>

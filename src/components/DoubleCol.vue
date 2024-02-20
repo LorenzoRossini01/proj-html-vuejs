@@ -135,7 +135,6 @@ export default {
   .details-col {
     padding: 3rem 0;
     background-color: #1a1a1a;
-    height: 1200px;
 
     color: white;
     display: flex;

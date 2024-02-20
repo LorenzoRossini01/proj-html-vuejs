@@ -27,6 +27,8 @@ export default {
 <style lang="scss" scoped>
 .card {
   border: none;
+  width: 150px;
+  padding: 2rem 0;
   position: relative;
   .pizza-details {
     text-align: center;
@@ -35,6 +37,7 @@ export default {
     h3 {
       color: #bc984a;
       font-weight: 700;
+      font-size: 1.2rem;
     }
     p {
       color: #d2401e;
@@ -44,8 +47,8 @@ export default {
 
   .pizza-sold {
     background-color: #d2401e;
-    width: 100px;
-    height: 100px;
+    width: 75px;
+    height: 75px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -55,8 +58,14 @@ export default {
     font-weight: 700;
     color: white;
     position: absolute;
-    right: 20px;
-    top: 20px;
+    right: 0;
+    top: 0;
+  }
+
+  &:hover img {
+    scale: 1.2;
+    transition: all ease-in-out 0.4s;
+    filter: drop-shadow(-12px 33px 21px #00000037);
   }
 }
 </style>

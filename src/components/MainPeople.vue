@@ -50,15 +50,14 @@ export default {
 
 <style lang="scss" scoped>
 .wrapper {
-  width: 100vw;
+  width: 100%;
   display: flex;
   margin: 0;
   padding: 0;
 
   .person {
     position: relative;
-    height: calc(100vw / 4);
-    width: calc(100vw / 4 - 4.2px);
+    width: calc(100% / 4);
     border-radius: 0;
 
     img {
@@ -97,6 +96,7 @@ export default {
 
       &:hover {
         opacity: 100%;
+        transition: all ease-in-out 0.2s;
       }
       &::before {
         content: "";

@@ -47,8 +47,8 @@ div {
   div {
     background-color: #d2401e;
 
-    height: 75px;
-    width: 75px;
+    height: 50px;
+    width: 50px;
     border-radius: 50%;
     display: flex;
     flex-direction: column;
@@ -65,6 +65,7 @@ div {
 
   &:hover {
     opacity: 100%;
+    transition: all ease-in-out 0.2s;
   }
   &::before {
     content: "";
