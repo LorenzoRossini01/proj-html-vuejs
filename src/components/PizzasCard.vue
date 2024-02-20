@@ -7,7 +7,7 @@ export default {
   },
 
   props: {
-    pizza: Array,
+    pizza: Object,
   },
 };
 </script>
