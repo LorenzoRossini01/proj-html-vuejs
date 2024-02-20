@@ -104,64 +104,80 @@ export default {
     MainPizzas,
     MainBooking,
   },
+
+  methods: {
+    scrollToTop() {
+      window.scrollTo(0, 0);
+    },
+  },
 };
 </script>
 
 <template>
-  <!-- cards -->
-  <section>
-    <div class="row g-2">
-      <MainCard1></MainCard1>
-    </div>
-  </section>
+  <main>
+    <!-- cards -->
+    <section>
+      <div class="row g-2">
+        <MainCard1></MainCard1>
+      </div>
+    </section>
 
-  <!-- carousel  -->
-  <section>
-    <app-carousel :carousel="mainCarousel"></app-carousel>
-  </section>
+    <!-- carousel  -->
+    <section>
+      <app-carousel :carousel="mainCarousel"></app-carousel>
+    </section>
 
-  <!-- menus -->
-  <section>
-    <double-col :cols="specialsCols"></double-col>
-  </section>
+    <!-- menus -->
+    <section>
+      <double-col :cols="specialsCols"></double-col>
+    </section>
 
-  <!-- banner -->
-  <section>
-    <div class="banner">
-      <div class="text-wrap">
-        <h2>go ahead and build your own pizza we won't judge!</h2>
+    <!-- banner -->
+    <section>
+      <div class="banner">
+        <div class="text-wrap">
+          <h2>go ahead and build your own pizza we won't judge!</h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- people  -->
+    <section>
+      <MainPeople></MainPeople>
+    </section>
+
+    <!-- sponsor -->
+    <section>
+      <div class="sponsor">
+        <div v-for="sponsor in sponsors">
+          <img :src="store.getImgUrl(sponsor)" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <!-- pizzas -->
+    <section>
+      <main-pizzas></main-pizzas>
+    </section>
+
+    <!-- events -->
+    <section>
+      <double-col :cols="dealsCols"></double-col>
+    </section>
+
+    <!-- book table  -->
+    <section>
+      <main-booking></main-booking>
+    </section>
+
+    <!-- scroll to top  -->
+
+    <div class="scroll-to-top" @click="scrollToTop()">
+      <div>
+        <img src="../assets/svg/svg-4.svg" alt="" />
       </div>
     </div>
-  </section>
-
-  <!-- people  -->
-  <section>
-    <MainPeople></MainPeople>
-  </section>
-
-  <!-- sponsor -->
-  <section>
-    <div class="sponsor">
-      <div v-for="sponsor in sponsors">
-        <img :src="store.getImgUrl(sponsor)" alt="" />
-      </div>
-    </div>
-  </section>
-
-  <!-- pizzas -->
-  <section>
-    <main-pizzas></main-pizzas>
-  </section>
-
-  <!-- events -->
-  <section>
-    <double-col :cols="dealsCols"></double-col>
-  </section>
-
-  <!-- book table  -->
-  <section>
-    <main-booking></main-booking>
-  </section>
+  </main>
 </template>
 
 <style lang="scss" scoped>
@@ -169,7 +185,10 @@ export default {
   height: 500px;
   background-color: chartreuse;
   background-image: url("../assets/img/h3-background-img.jpg");
+  background-attachment: fixed;
   background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -196,5 +215,35 @@ export default {
 form {
   height: 200px;
   background-color: aliceblue;
+}
+
+main {
+  position: relative;
+}
+
+.scroll-to-top {
+  position: absolute;
+  top: 100vh;
+  bottom: 2rem;
+  right: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  z-index: 1;
+  &:hover {
+    transition: all ease-in 0.5s;
+  }
+  div {
+    position: sticky;
+    bottom: 2rem;
+
+    height: 50px;
+    aspect-ratio: 1;
+    background-color: #f6f7f2;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 </style>
