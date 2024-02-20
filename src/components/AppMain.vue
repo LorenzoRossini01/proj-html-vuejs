@@ -56,6 +56,42 @@ export default {
           ],
         },
       },
+
+      sponsors: [
+        "h1-clients-img-4.png",
+        "h1-clients-img-3.png",
+        "h1-clients-img-1.png",
+        "h1-clients-img-2.png",
+        "h1-clients-img-5.png",
+      ],
+
+      dealsCols: {
+        colOne: { img1: "h3-img-5a.jpg" },
+        colTwo: {
+          title: "delish pizza deals",
+          description: "made with love",
+          combos: [
+            {
+              dateDay: "02",
+              dateMonth: "nov",
+              name: "traditional neapolitan pies in kyoto pizza mercato",
+              desc: "204 e. pizzetta tommaso",
+            },
+            {
+              dateDay: "03",
+              dateMonth: "nov",
+              name: "terarazza patio dining space opening this weekend",
+              desc: "204 e. pizzetta tommaso",
+            },
+            {
+              dateDay: "05",
+              dateMonth: "nov",
+              name: "sienna private dining room with stéphane brunn",
+              desc: "204 e. pizzetta tommaso",
+            },
+          ],
+        },
+      },
     };
   },
 
@@ -84,9 +120,7 @@ export default {
 
   <!-- menus -->
   <section>
-    <div class="row">
-      <double-col :cols="specialsCols"></double-col>
-    </div>
+    <double-col :cols="specialsCols"></double-col>
   </section>
 
   <!-- banner -->
@@ -101,39 +135,21 @@ export default {
 
   <!-- sponsor -->
   <section>
-    <div class="sponsor"></div>
+    <div class="sponsor">
+      <div v-for="sponsor in sponsors">
+        <img :src="store.getImgUrl(sponsor)" alt="" />
+      </div>
+    </div>
   </section>
 
   <!-- pizzas -->
   <section>
-    <header>titolo</header>
-    <div class="row">
-      <div class="col">
-        <main-pizzas></main-pizzas>
-      </div>
-      <div class="col">
-        <main-pizzas></main-pizzas>
-      </div>
-      <div class="col">
-        <main-pizzas></main-pizzas>
-      </div>
-      <div class="col">
-        <main-pizzas></main-pizzas>
-      </div>
-      <div class="col">
-        <main-pizzas></main-pizzas>
-      </div>
-      <div class="col">
-        <main-pizzas></main-pizzas>
-      </div>
-    </div>
+    <main-pizzas></main-pizzas>
   </section>
 
   <!-- events -->
   <section>
-    <div class="row flex-row-reverse">
-      <double-col></double-col>
-    </div>
+    <double-col :cols="dealsCols"></double-col>
   </section>
 
   <!-- book table  -->
@@ -153,8 +169,11 @@ export default {
 }
 
 .sponsor {
-  height: 250px;
-  background-color: chocolate;
+  background-color: #f7f7f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 0;
 }
 
 form {
