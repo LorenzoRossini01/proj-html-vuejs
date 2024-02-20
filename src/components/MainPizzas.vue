@@ -76,7 +76,7 @@ export default {
 
 <style lang="scss" scoped>
 header {
-  padding: 5rem;
+  padding: 5rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -105,5 +105,6 @@ header {
   flex-wrap: nowrap;
   gap: 15rem;
   padding-bottom: 10rem;
+  width: 100%;
 }
 </style>

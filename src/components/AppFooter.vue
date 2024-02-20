@@ -109,7 +109,9 @@ export default {
   margin-top: 0.5rem;
   .col-img {
     background-image: url("../assets/img/footer-img-1.jpg");
-    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     justify-self: flex-start;
     img {
       height: 100%;

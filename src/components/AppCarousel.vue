@@ -85,12 +85,12 @@ export default {
 <style lang="scss" scoped>
 .container-fluid {
   .wrapper {
-    height: 500px;
-    padding: 100px 0 100px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+    height: 500px;
   }
   .pizza-slice {
     position: absolute;
@@ -121,28 +121,27 @@ export default {
     background-color: white;
     position: absolute;
     width: 100px;
-    height: 100px;
+    height: 50px;
     padding: 1rem 0;
     color: #d2401e;
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
   }
 
   .prev-button {
     left: 0;
     transform: translate(0, 50%);
-    border-radius: 50%;
+    border-radius: 50px 50px 0 0;
     span {
-      padding-bottom: 2rem;
     }
   }
   .next-button {
     right: 0;
     transform: translate(0, -50%);
-    border-radius: 50%;
+    border-radius: 0 0 50px 50px;
     span {
-      padding-top: 2rem;
     }
   }
   .dots {

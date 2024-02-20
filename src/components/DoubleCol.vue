@@ -64,6 +64,7 @@ export default {
 
 <style lang="scss" scoped>
 .specials {
+  width: 100%;
   .col-img {
     position: relative;
 
@@ -84,6 +85,7 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 0;
     .wrapper {
       width: 60%;
     }
@@ -121,8 +123,8 @@ export default {
 }
 .deals {
   flex-direction: row-reverse;
-  margin: 0;
-  padding: 0;
+
+  width: 100%;
 
   .col-img {
     img {

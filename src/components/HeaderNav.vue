@@ -17,7 +17,7 @@ export default {
       <div class="nav-center">
         <ul>
           <li>
-            <i class="fa-regular fa-font-awesome"></i>
+            <img src="../assets/svg/svg-0.svg" alt="" />
             <span>home</span>
           </li>
           <li>
@@ -46,7 +46,8 @@ export default {
         <div class="cart">
           <ul>
             <li>
-              <i class="fa-regular fa-bell"></i>
+              <img src="../assets/svg/svg-1.svg" alt="" />
+
               <span>cart</span>
             </li>
             <li>
@@ -68,13 +69,15 @@ nav {
   .container {
     padding: 2rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 
     .nav-left {
       .btn {
         background-color: #d2401e;
         border-radius: 0;
+        width: 200px;
+        padding: 1rem 2rem;
       }
     }
     .nav-center {
@@ -90,12 +93,28 @@ nav {
 
     ul {
       margin-bottom: 0;
+      display: flex;
       li {
-        display: inline-block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem 0;
+        width: 100px;
         margin: 0 1rem;
         cursor: pointer;
+        img {
+          margin: 0 0.25rem;
+          width: 1.5rem;
+          display: inline;
+          filter: invert(1);
+        }
         i {
           margin: 0 0.25rem;
+        }
+
+        &:hover {
+          background: #3c3c3c;
+          filter: brightness(100%);
         }
       }
     }
