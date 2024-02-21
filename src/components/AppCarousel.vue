@@ -33,6 +33,15 @@ export default {
     goToSlide(dotIndex) {
       this.activeIndex = dotIndex;
     },
+    setAutoplay() {
+      this.autoplay = setInterval(() => {
+        this.goNextSlide();
+      }, 3000);
+    },
+
+    stopAutoplay() {
+      clearInterval(this.autoplay);
+    },
   },
 };
 </script>
@@ -42,9 +51,14 @@ export default {
     class="container-fluid p-0"
     :style="`background-color: ${carousel[activeIndex].bg}`"
   >
-    <div class="wrapper">
+    <div
+      class="wrapper"
+      @mouseover="stopAutoplay()"
+      @mouseleave="setAutoplay()"
+    >
       <!-- header  -->
       <img
+        class="pizza-slice-bg"
         :src="store.getImgUrl(carousel[activeIndex].img1)"
         alt=""
         v-if="carousel[activeIndex].img1"
@@ -95,7 +109,22 @@ export default {
     height: 500px;
   }
   .pizza-slice {
+    scale: 0.7;
+    animation: getbigger linear 3s infinite;
     position: absolute;
+  }
+
+  .pizza-slice-bg {
+    scale: 1;
+    transition: all ease-in 0.5s;
+  }
+  &:hover .pizza-slice {
+    scale: 1;
+    transition: all ease-in 0.5s;
+  }
+  &:hover .pizza-slice-bg {
+    scale: 0.8;
+    transition: all ease-in 0.5s;
   }
 
   .cit {
