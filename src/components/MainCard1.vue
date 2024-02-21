@@ -27,57 +27,70 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-div {
+.card {
   border-radius: 0;
   border: none;
-}
-
-.layover {
-  position: absolute;
-  top: 0;
-  background-color: white;
-
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0%;
   overflow: hidden;
-  div {
-    background-color: #d2401e;
 
-    height: 50px;
-    width: 50px;
+  .layover {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    rotate: 360deg;
+    background-color: white;
+
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
+
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;
-    z-index: 1;
+    opacity: 0%;
+    overflow: hidden;
+    div {
+      background-color: #d2401e;
 
-    span {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
       display: flex;
-      gap: 1rem;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      z-index: 1;
+
+      span {
+        display: flex;
+        gap: 1rem;
+      }
+    }
+
+    &::before {
+      content: "";
+      width: 150%;
+      height: 200%;
+      position: absolute;
+      left: -25%;
+      bottom: -25%;
+      background-image: radial-gradient(#0000006d 10%, transparent 11%);
+      background-size: 10px 10px;
+      background-repeat: repeat;
+      transform: rotate(45deg);
     }
   }
+  &:hover .layover {
+    left: 50%;
+    top: 50%;
+    rotate: 0deg;
 
-  &:hover {
     opacity: 100%;
+    width: 100%;
+    border-radius: 0;
+    height: 100%;
     transition: all ease-in-out 0.2s;
-  }
-  &::before {
-    content: "";
-    width: 250%;
-    height: 350%;
-    position: absolute;
-    top: 0;
-    background-image: radial-gradient(#0000006d 10%, transparent 11%);
-    background-size: 10px 10px;
-    background-position: center;
-    background-repeat: repeat;
-    transform: rotate(45deg);
   }
 }
 </style>

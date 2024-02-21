@@ -20,3 +20,9 @@ body {
 ul {
   list-style: none;
 }
+
+@keyframes scroll {
+  to {
+    transform: translate(calc(-50% - 2.5rem));
+  }
+}

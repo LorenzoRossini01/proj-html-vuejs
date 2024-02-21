@@ -67,9 +67,10 @@ export default {
     </div>
   </header>
 
-  <div class="row">
-    <div class="col-2" v-for="pizza in pizzasArray">
-      <PizzasCard :pizza="pizza"></PizzasCard>
+  <div class="scroller">
+    <div class="inner-scroller">
+      <PizzasCard v-for="pizza in pizzasArray" :pizza="pizza"></PizzasCard>
+      <PizzasCard v-for="pizza in pizzasArray" :pizza="pizza"></PizzasCard>
     </div>
   </div>
 </template>
@@ -100,11 +101,26 @@ header {
     }
   }
 }
-.row {
-  overflow: auto;
-  flex-wrap: nowrap;
-  gap: 5rem;
-  padding: 5rem;
-  width: 100%;
+.scroller {
+  max-width: 100%;
+  overflow: hidden;
+
+  -webkit-mask: linear-gradient(
+    90deg,
+    transparent,
+    white 10%,
+    white 90%,
+    transparent
+  );
+  .inner-scroller {
+    width: max-content;
+    display: flex;
+    gap: 5rem;
+    animation: scroll 20s linear infinite;
+
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
 }
 </style>

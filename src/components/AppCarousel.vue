@@ -58,6 +58,7 @@ export default {
 
       <!-- main  -->
       <img
+        class="cit"
         :src="store.getImgUrl(carousel[activeIndex].background)"
         alt=""
         v-if="carousel[activeIndex].background"
@@ -84,6 +85,7 @@ export default {
 
 <style lang="scss" scoped>
 .container-fluid {
+  width: 100%;
   .wrapper {
     width: 100%;
     display: flex;
@@ -94,6 +96,10 @@ export default {
   }
   .pizza-slice {
     position: absolute;
+  }
+
+  .cit {
+    width: 100%;
   }
 
   .details {

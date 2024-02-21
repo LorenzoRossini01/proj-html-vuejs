@@ -68,12 +68,14 @@ export default {
       top: 0;
       background-color: white;
 
-      width: 100%;
-      height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
       opacity: 0%;
+
+      height: 50%;
+      width: 50%;
+      rotate: 45deg;
 
       overflow: hidden;
       div {
@@ -87,6 +89,7 @@ export default {
         align-items: center;
         color: white;
         z-index: 1;
+        text-align: center;
 
         span {
           display: flex;
@@ -94,22 +97,25 @@ export default {
         }
       }
 
-      &:hover {
-        opacity: 100%;
-        transition: all ease-in-out 0.2s;
-      }
       &::before {
         content: "";
-        width: 250%;
-        height: 250%;
+        width: 150%;
+        height: 150%;
         position: absolute;
-        top: 0;
+        left: -25%;
+        bottom: -25%;
         background-image: radial-gradient(#0000006d 10%, transparent 11%);
         background-size: 10px 10px;
-        background-position: center;
         background-repeat: repeat;
         transform: rotate(45deg);
       }
+    }
+    &:hover .layover {
+      width: 100%;
+      height: 100%;
+      opacity: 100%;
+      transition: all ease-in-out 0.2s;
+      rotate: 0deg;
     }
   }
 }

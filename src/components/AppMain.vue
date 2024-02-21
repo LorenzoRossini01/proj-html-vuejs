@@ -171,7 +171,6 @@ export default {
     </section>
 
     <!-- scroll to top  -->
-
     <div class="scroll-to-top" @click="scrollToTop()">
       <div>
         <img src="../assets/svg/svg-4.svg" alt="" />
