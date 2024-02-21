@@ -64,6 +64,7 @@ export default {
 
   &:hover img {
     scale: 1.2;
+    rotate: 360deg;
     transition: all ease-in-out 0.4s;
     filter: drop-shadow(-12px 33px 21px #00000037);
   }
