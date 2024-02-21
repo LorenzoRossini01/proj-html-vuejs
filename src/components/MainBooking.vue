@@ -1,11 +1,25 @@
 <script>
+import axios from "axios";
 import { store } from "../store/index";
 
 export default {
   data() {
     return {
       store,
+      person: "",
+      date: "",
+      hour: "",
     };
+  },
+
+  methods: {
+    sendBooking() {
+      axios.post("http://localhost:3000/booking", {
+        person: this.person,
+        date: this.date,
+        hour: this.hour,
+      });
+    },
   },
 };
 </script>
@@ -14,30 +28,20 @@ export default {
   <div class="wrapper">
     <form>
       <div class="input-group">
-        <input type="number" class="form-control" />
+        <input type="number" class="form-control" v-model="person" />
         <span class="input-group-text" id="basic-addon2">Person</span>
       </div>
       <span>for</span>
       <div class="input-group">
-        <input
-          type="date"
-          class="form-control"
-          placeholder="Recipient's username"
-          aria-label="Recipient's username"
-          aria-describedby="basic-addon2"
-        />
+        <input type="date" class="form-control" v-model="date" />
       </div>
       <span>at</span>
       <div class="input-group">
-        <input
-          type="time"
-          class="form-control"
-          placeholder="Recipient's username"
-          aria-label="Recipient's username"
-          aria-describedby="basic-addon2"
-        />
+        <input type="time" class="form-control" v-model="hour" />
       </div>
-      <div class="btn btn-primary form-control">book a table</div>
+      <button class="btn btn-primary form-control" @click="sendBooking()">
+        book a table
+      </button>
       <p>*Powered by OpenTable</p>
     </form>
   </div>
